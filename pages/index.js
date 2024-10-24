@@ -43,7 +43,7 @@ export default function Home({ posts }) {
 
 // runs on the server side
 export async function getStaticProps() {
-  // fetced data from file system
+  // fetch data from file system
   const allPostsData = getSortedPostsData();
 
   return {
