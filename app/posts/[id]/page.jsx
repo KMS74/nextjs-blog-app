@@ -2,7 +2,6 @@ import Layout from "../../../components/layout";
 import { getPostData } from "../../../lib/posts";
 import Date from "../../../components/Date";
 import utilStyles from "../../../styles/utils.module.css";
-import { de } from "date-fns/locale";
 
 export async function generateMetadata({ params }, parent) {
   const id = (await params).id;
