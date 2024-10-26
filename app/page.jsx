@@ -1,15 +1,19 @@
-import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/Date";
-export default function Home({ posts }) {
+
+export const metadata = {
+  title: siteTitle,
+  description: "List of posts on the blog site",
+};
+
+export default async function Home() {
+  const posts = getSortedPostsData();
+
   return (
     <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
       <section className={utilStyles.headingMd}>
         <p>
           Hi, my name is Karim Shabana graduated from the faculty of Computers
@@ -39,16 +43,4 @@ export default function Home({ posts }) {
       </section>
     </Layout>
   );
-}
-
-// runs on the server side
-export async function getStaticProps() {
-  // fetch data from file system
-  const allPostsData = getSortedPostsData();
-
-  return {
-    props: {
-      posts: allPostsData,
-    },
-  };
 }
