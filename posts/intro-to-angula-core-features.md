@@ -13,7 +13,7 @@ Angular is a popular front-end web application development framework created by 
 
 One of the core features of Angular is its component-based architecture. Components are reusable and independent building blocks of an application. They encapsulate the application's functionality and data, and can be easily added, removed, or modified. Here is an example of a simple component in Angular:
 
-```
+```ts
 import { Component } from '@angular/core';
 
 @Component({
@@ -31,25 +31,25 @@ Another important feature of Angular is its powerful data binding system. Data b
 
 - Interpolation: Allows us to embed expressions in the template, which are evaluated and replaced with their values at runtime. Here's an example:
 
-```
+```html
 <h1>{{ greeting }}</h1>
 ```
 
 - Property binding: Allows us to bind a component property to an element's property. Here's an example:
 
-```
+```html
 <input [value]="name">
 ```
 
 - Event binding: Allows us to bind an element's event to a component method. Here's an example:
 
-```
+```html
 <button (click)="handleClick()">Click me</button>
 ```
 
 - Two-way binding: Allows us to bind a component property and an element's property to each other, so that changes in one are automatically reflected in the other. Here's an example:
 
-```
+```html
 <input [(ngModel)]="name">
 ```
 
@@ -59,13 +59,13 @@ Directives are another important feature of Angular. They allow us to add behavi
 
 - Structural directives: Alter the structure of the DOM by adding or removing elements. Examples include `*ngIf`, `*ngFor`, and `*ngSwitch`.
 
-```
+```html
 <div *ngIf="showMessage">Hello, World!</div>
 ```
 
 - Attribute directives: Modify the behavior or appearance of elements by manipulating their attributes. Examples include `ngClass`, `ngStyle`, and `ngModel`.
 
-```
+```html
 <input [ngClass]="{ 'is-invalid': isInvalid }" [(ngModel)]="name">
 ```
 
@@ -73,7 +73,7 @@ Directives are another important feature of Angular. They allow us to add behavi
 
 Pipes are a useful feature of Angular that allow us to transform data before displaying it in the view. They can be used to format dates, numbers, or strings, or to filter or sort arrays. Here's an example:
 
-```
+```html
 <p>{{ date | date: 'dd/MM/yyyy' }}</p>
 ```
 
@@ -83,7 +83,7 @@ In this example, we use the `date` pipe to format a date in a specific format.
 
 Modules are a way to organize an Angular application into logical units of functionality. They can be used to group related components, directives, pipes, and services, and to encapsulate them from the rest of the application. Here's an example of a simple module in Angular:
 
-```
+```ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HelloWorldComponent } from './hello-world.component';
